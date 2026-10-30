@@ -14,15 +14,15 @@ html {
 }
 
 body {
-    background: #000;
-    color: #fff;
+    background: #080808;
+    color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 
@@ -31,47 +31,54 @@ a {
 ========================= */
 
 .demo-notice {
-    background: #242424;
-    color: #fff;
+    background: #202020;
+    color: #ffffff;
     text-align: center;
     padding: 12px 15px;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.demo-notice strong {
+    color: #ffbd59;
+    margin-right: 8px;
 }
 
 .demo-notice span {
     display: block;
-    color: #ddd;
+    color: #c4c4c4;
     font-size: 12px;
 }
 
 
 /* =========================
-   HEADER / HERO
+   NAVBAR
 ========================= */
 
 .header {
-    min-height: 650px;
-    height: 90vh;
-    max-height: 850px;
+    min-height: 700px;
     position: relative;
+    overflow: hidden;
 
     background:
-    linear-gradient(
-        to bottom,
-        rgba(0,0,0,.65),
-        rgba(0,0,0,.75),
-        #000
-    ),
-    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba")
-    center center / cover no-repeat;
+        radial-gradient(
+            ellipse at 75% 35%,
+            #3d1928 0%,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #101018,
+            #090909 65%,
+            #241018
+        );
 }
 
 .navbar {
     width: 90%;
     max-width: 1200px;
     margin: auto;
-    padding: 25px 0;
+    padding: 28px 0;
 
     display: flex;
     align-items: center;
@@ -81,52 +88,69 @@ a {
     z-index: 2;
 }
 
-.logo {
-    color: #e50914;
-    font-size: 35px;
+.logo,
+.footer-brand {
+    color: #ffbd59;
+    font-size: 32px;
     font-weight: 900;
     letter-spacing: 2px;
 }
 
-.logo span {
-    color: #fff;
+.logo span,
+.footer-brand span {
+    color: #ffffff;
 }
 
 .demo-label {
-    border: 1px solid #fff;
-    padding: 9px 15px;
-    font-size: 12px;
-    letter-spacing: 1px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    padding: 9px 14px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
 }
 
+
+/* =========================
+   HERO SECTION
+========================= */
+
 .hero-content {
+    width: 90%;
+    max-width: 850px;
+    margin: 130px auto 0;
+
     position: relative;
     z-index: 2;
 
-    width: 90%;
-    max-width: 850px;
-
-    margin: 140px auto 0;
     text-align: center;
 }
 
+.hero-tag {
+    display: inline-block;
+    color: #ffbd59;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
 .hero-content h1 {
-    font-size: clamp(35px, 5vw, 60px);
-    line-height: 1.15;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.1;
     font-weight: 800;
 }
 
 .hero-content h2 {
     font-size: 22px;
-    margin: 25px 0;
+    margin: 25px 0 15px;
 }
 
 .hero-content p {
-    font-size: 17px;
-    line-height: 1.7;
-    color: #ddd;
     max-width: 650px;
     margin: auto;
+
+    color: #c4c4c4;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 .hero-btn {
@@ -134,31 +158,47 @@ a {
     align-items: center;
     gap: 15px;
 
-    background: #e50914;
-    color: #fff;
+    margin-top: 35px;
+    padding: 15px 25px;
 
-    padding: 16px 25px;
-    margin-top: 30px;
+    background: #ffbd59;
+    color: #171717;
 
-    font-size: 18px;
     font-weight: bold;
+    border-radius: 5px;
 
-    border-radius: 4px;
     transition: .3s;
 }
 
 .hero-btn:hover {
-    background: #b20710;
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+.hero-btn span {
+    font-size: 23px;
+}
+
+.hero-decoration {
+    width: 450px;
+    height: 450px;
+
+    border: 1px solid rgba(255,189,89,.15);
+    border-radius: 50%;
+
+    position: absolute;
+    right: -180px;
+    bottom: -230px;
 }
 
 
 /* =========================
-   SHOWCASE SECTIONS
+   SHOWCASE
 ========================= */
 
 .showcase {
-    border-top: 8px solid #222;
-    padding: 65px 5%;
+    padding: 90px 6%;
+    border-top: 1px solid #292929;
 }
 
 .showcase-container {
@@ -169,115 +209,398 @@ a {
     align-items: center;
     justify-content: space-between;
 
-    gap: 40px;
-}
-
-.showcase-text {
-    flex: 1;
-}
-
-.showcase-text h2 {
-    font-size: clamp(30px, 4vw, 48px);
-    margin-bottom: 20px;
-}
-
-.showcase-text p {
-    font-size: 20px;
-    line-height: 1.6;
-    color: #ddd;
-}
-
-.showcase-img {
-    flex: 1;
-    position: relative;
-    text-align: center;
-}
-
-.showcase-img > img {
-    width: 100%;
-    max-width: 550px;
-    position: relative;
-    z-index: 2;
-}
-
-.showcase-img video {
-    position: absolute;
-    width: 73%;
-    height: 54%;
-    object-fit: cover;
-
-    top: 20%;
-    left: 13.5%;
-    z-index: 1;
+    gap: 60px;
 }
 
 .reverse {
     flex-direction: row-reverse;
 }
 
+.showcase-text {
+    flex: 1;
+}
 
-/* =========================
-   DOWNLOAD CARD
-========================= */
+.section-label {
+    display: inline-block;
+    color: #ffbd59;
 
-.download-card {
-    position: absolute;
-    z-index: 3;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
 
-    bottom: 8%;
-    left: 50%;
+    margin-bottom: 22px;
+}
 
-    transform: translateX(-50%);
+.showcase-text h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
 
-    width: 65%;
-    max-width: 340px;
+.showcase-text p {
+    color: #c5c5c5;
+    font-size: 18px;
+    line-height: 1.8;
+}
 
-    background: #000;
-    border: 2px solid #555;
-    border-radius: 12px;
-
-    padding: 10px;
+.visual-area {
+    flex: 1;
+    min-width: 0;
 
     display: flex;
     align-items: center;
-    gap: 12px;
-}
+    justify-content: center;
 
-.download-card img {
-    width: 45px;
-    height: 60px;
-    object-fit: cover;
-}
-
-.download-card h3 {
-    font-size: 14px;
-}
-
-.download-card p {
-    color: #0071eb;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.download-card i {
-    color: #0071eb;
-    margin-left: auto;
+    min-height: 350px;
 }
 
 
 /* =========================
-   FAQ SECTION
+   TV ILLUSTRATION
+========================= */
+
+.tv-illustration {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.tv-screen {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 75% 25%, #a14e4d, transparent 30%),
+        linear-gradient(135deg, #351a2d, #151526 65%, #462b35);
+
+    border: 9px solid #292929;
+    border-radius: 12px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+
+.screen-content {
+    position: absolute;
+    z-index: 2;
+
+    left: 9%;
+    top: 23%;
+
+    text-align: left;
+}
+
+.screen-tag {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #ffbd59;
+}
+
+.screen-content h3 {
+    font-size: clamp(22px, 3vw, 38px);
+    line-height: 1.1;
+    margin: 15px 0;
+}
+
+.screen-button {
+    display: inline-block;
+    background: #ffbd59;
+    color: #111;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    padding: 9px 12px;
+    border-radius: 3px;
+}
+
+.screen-glow {
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    right: -40px;
+    bottom: -70px;
+
+    background: rgba(255,189,89,.15);
+    filter: blur(30px);
+    border-radius: 50%;
+}
+
+.tv-stand {
+    width: 70px;
+    height: 32px;
+
+    margin: auto;
+
+    background: linear-gradient(90deg, #252525, #555, #252525);
+
+    clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
+}
+
+.tv-base {
+    width: 150px;
+    height: 9px;
+
+    background: #444;
+    border-radius: 50%;
+
+    margin: auto;
+}
+
+
+/* =========================
+   PHONE ILLUSTRATION
+========================= */
+
+.phone-illustration {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.phone-frame {
+    width: 210px;
+    height: 370px;
+
+    background: #252525;
+    border: 5px solid #555;
+    border-radius: 30px;
+
+    padding: 8px;
+    position: relative;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+
+.phone-screen {
+    height: 100%;
+    border-radius: 21px;
+
+    background: #111;
+    overflow: hidden;
+    padding: 22px 12px 12px;
+}
+
+.phone-camera {
+    width: 65px;
+    height: 13px;
+
+    background: #252525;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.phone-brand {
+    display: block;
+    color: #ffbd59;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.phone-poster {
+    height: 190px;
+    margin-top: 18px;
+    padding: 20px 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background:
+        radial-gradient(circle at 80% 20%, #c57c6a, transparent 30%),
+        linear-gradient(135deg, #4e2637, #17182a);
+}
+
+.phone-poster span {
+    font-size: 8px;
+    color: #ffbd59;
+    letter-spacing: 2px;
+}
+
+.phone-poster h3 {
+    font-size: 19px;
+    line-height: 1.1;
+    margin-top: 10px;
+}
+
+.phone-lines {
+    margin-top: 14px;
+}
+
+.phone-lines span {
+    display: block;
+    width: 100%;
+    height: 5px;
+
+    background: #444;
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+
+.phone-lines span:nth-child(2) {
+    width: 75%;
+}
+
+.phone-lines span:nth-child(3) {
+    width: 50%;
+}
+
+.phone-nav {
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 14px;
+    color: #ffbd59;
+}
+
+
+/* =========================
+   LAPTOP + TABLET
+========================= */
+
+.devices-illustration {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    min-height: 330px;
+}
+
+.laptop-device {
+    position: absolute;
+    bottom: 20px;
+    left: 8%;
+
+    width: 85%;
+}
+
+.laptop-screen {
+    aspect-ratio: 16 / 10;
+
+    background: #282828;
+    border: 8px solid #555;
+    border-radius: 12px 12px 5px 5px;
+
+    padding: 8px;
+}
+
+.laptop-content {
+    height: 100%;
+    padding: 22px;
+
+    background:
+        radial-gradient(circle at 85% 20%, #9a4c52, transparent 30%),
+        linear-gradient(135deg, #251b34, #10101b);
+}
+
+.laptop-content > span {
+    color: #ffbd59;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.laptop-content h3 {
+    font-size: clamp(20px, 3vw, 30px);
+    line-height: 1.1;
+    margin-top: 22px;
+}
+
+.laptop-card-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.laptop-card-row i {
+    width: 40px;
+    height: 35px;
+    background: #77414c;
+    border-radius: 4px;
+}
+
+.laptop-card-row i:nth-child(2) {
+    background: #46536c;
+}
+
+.laptop-card-row i:nth-child(3) {
+    background: #956b47;
+}
+
+.laptop-base {
+    width: 110%;
+    height: 9px;
+
+    margin-left: -5%;
+
+    background: linear-gradient(90deg, #444, #888, #444);
+    border-radius: 2px 2px 12px 12px;
+}
+
+.tablet-device {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 32%;
+    height: 205px;
+
+    background: #454545;
+    border: 5px solid #777;
+    border-radius: 12px;
+
+    padding: 7px;
+    z-index: 2;
+}
+
+.device-content {
+    height: 100%;
+    background: #191725;
+    padding: 12px 8px;
+}
+
+.device-content span {
+    color: #ffbd59;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.device-art {
+    height: 80px;
+    margin-top: 12px;
+
+    background: linear-gradient(135deg, #63394e, #253c54);
+    border-radius: 3px;
+}
+
+.device-lines {
+    width: 80%;
+    height: 5px;
+    background: #555;
+    margin-top: 12px;
+}
+
+
+/* =========================
+   FAQ
 ========================= */
 
 .faq {
-    border-top: 8px solid #222;
-    padding: 65px 5%;
+    padding: 90px 6%;
+    border-top: 1px solid #292929;
     text-align: center;
 }
 
 .faq h2 {
     font-size: clamp(30px, 4vw, 45px);
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 .faq-list {
@@ -287,16 +610,20 @@ a {
 }
 
 .faq details {
-    background: #303030;
-    margin-bottom: 10px;
+    background: #202020;
+    margin-bottom: 12px;
+    border-radius: 5px;
 }
 
 .faq summary {
-    cursor: pointer;
-    padding: 22px;
-    font-size: 20px;
     list-style: none;
+    cursor: pointer;
+
     position: relative;
+
+    padding: 23px 55px 23px 22px;
+
+    font-size: 19px;
 }
 
 .faq summary::-webkit-details-marker {
@@ -305,10 +632,12 @@ a {
 
 .faq summary::after {
     content: "+";
+
     position: absolute;
     right: 22px;
+    top: 13px;
+
     font-size: 28px;
-    top: 12px;
 }
 
 .faq details[open] summary::after {
@@ -316,11 +645,13 @@ a {
 }
 
 .faq details p {
-    border-top: 1px solid #000;
-    padding: 22px;
-    font-size: 17px;
-    line-height: 1.7;
-    color: #ddd;
+    padding: 20px 22px;
+
+    border-top: 1px solid #444;
+
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 
@@ -329,75 +660,130 @@ a {
 ========================= */
 
 .footer {
-    border-top: 8px solid #222;
-    padding: 55px 8%;
+    border-top: 1px solid #292929;
+
+    padding: 65px 7%;
     text-align: center;
-    color: #999;
+
+    color: #aaa;
 }
 
-.footer h3 {
-    color: #e50914;
-    font-size: 28px;
-    letter-spacing: 2px;
+.footer-brand {
     margin-bottom: 15px;
 }
 
-.footer-description {
-    line-height: 1.6;
+.footer > p {
+    font-size: 14px;
+    line-height: 1.7;
 }
 
 .footer-links {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    flex-wrap: wrap;
+
+    gap: 30px;
     margin: 30px 0;
 }
 
 .footer-links a {
-    color: #aaa;
     font-size: 14px;
+    color: #bbb;
 }
 
 .footer-links a:hover {
-    color: #fff;
-    text-decoration: underline;
+    color: #ffbd59;
 }
 
-.copyright {
-    font-size: 13px;
-    margin-top: 20px;
+.footer-bottom {
+    border-top: 1px solid #292929;
+    padding-top: 22px;
+
+    font-size: 12px;
+    line-height: 2;
 }
 
 
 /* =========================
-   RESPONSIVE DESIGN
+   TABLET RESPONSIVE
 ========================= */
 
 @media (max-width: 768px) {
 
     .header {
-        min-height: 600px;
-        height: auto;
-    }
-
-    .navbar {
-        width: 92%;
-        padding: 20px 0;
-    }
-
-    .logo {
-        font-size: 26px;
-    }
-
-    .demo-label {
-        font-size: 10px;
-        padding: 7px;
+        min-height: 650px;
     }
 
     .hero-content {
         margin-top: 120px;
-        padding-bottom: 100px;
+    }
+
+    .hero-content h1 {
+        font-size: 43px;
+    }
+
+    .showcase {
+        padding: 65px 6%;
+    }
+
+    .showcase-container,
+    .showcase-container.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .showcase-text {
+        width: 100%;
+    }
+
+    .showcase-text p {
+        font-size: 16px;
+    }
+
+    .visual-area {
+        width: 100%;
+        min-height: 330px;
+    }
+
+    .tv-illustration {
+        max-width: 480px;
+    }
+
+    .devices-illustration {
+        max-width: 500px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+
+    .demo-notice {
+        font-size: 11px;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .demo-label {
+        font-size: 9px;
+        padding: 7px;
+    }
+
+    .header {
+        min-height: 610px;
+    }
+
+    .hero-content {
+        width: 90%;
+        margin-top: 110px;
     }
 
     .hero-content h1 {
@@ -405,101 +791,75 @@ a {
     }
 
     .hero-content h2 {
-        font-size: 19px;
+        font-size: 18px;
     }
 
     .hero-content p {
-        font-size: 15px;
-    }
-
-    .showcase {
-        padding: 50px 6%;
-    }
-
-    .showcase-container,
-    .reverse {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-    }
-
-    .showcase-text h2 {
-        font-size: 32px;
-    }
-
-    .showcase-text p {
-        font-size: 17px;
-    }
-
-    .showcase-img {
-        width: 100%;
-    }
-
-    .showcase-img > img {
-        max-width: 450px;
-    }
-
-    .download-card {
-        width: 70%;
-    }
-
-    .faq {
-        padding: 50px 6%;
-    }
-
-    .faq summary {
-        font-size: 17px;
-        padding: 20px;
-        padding-right: 45px;
-    }
-
-    .faq details p {
-        font-size: 15px;
-    }
-
-    .footer-links {
-        gap: 18px;
-    }
-}
-
-
-@media (max-width: 420px) {
-
-    .demo-notice {
-        font-size: 12px;
-    }
-
-    .logo {
-        font-size: 22px;
-    }
-
-    .demo-label {
-        font-size: 9px;
-    }
-
-    .hero-content h1 {
-        font-size: 31px;
+        font-size: 14px;
     }
 
     .hero-btn {
-        font-size: 15px;
-        padding: 14px 18px;
+        font-size: 14px;
+        padding: 13px 19px;
+    }
+
+    .showcase {
+        padding: 55px 6%;
     }
 
     .showcase-text h2 {
-        font-size: 28px;
+        font-size: 31px;
     }
 
-    .download-card {
-        width: 85%;
+    .showcase-text p {
+        font-size: 15px;
     }
 
-    .faq h2 {
-        font-size: 29px;
+    .visual-area {
+        min-height: 270px;
+    }
+
+    .phone-frame {
+        width: 175px;
+        height: 320px;
+    }
+
+    .phone-poster {
+        height: 155px;
+    }
+
+    .devices-illustration {
+        min-height: 270px;
+    }
+
+    .tablet-device {
+        height: 165px;
+    }
+
+    .laptop-device {
+        bottom: 25px;
+    }
+
+    .faq {
+        padding: 60px 6%;
+    }
+
+    .faq summary {
+        font-size: 16px;
+        padding: 20px 45px 20px 15px;
+    }
+
+    .faq details p {
+        font-size: 14px;
+        padding: 17px;
     }
 
     .footer {
-        padding: 40px 6%;
+        padding: 45px 6%;
+    }
+
+    .footer-links {
+        gap: 20px;
     }
 
 }
